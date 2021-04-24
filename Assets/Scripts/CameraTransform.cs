@@ -17,12 +17,22 @@ public class CameraTransform : MonoBehaviour {
         //var speed : float = 1.5f;
         // Rotate Right Click
         if (Input.GetMouseButton(1)) {
-            Vector3 rotation = new Vector3 (
-                controller.transform.eulerAngles.x + Input.GetAxis("Mouse Y") * -1f,
-                controller.transform.eulerAngles.y + Input.GetAxis("Mouse X") * 1f,
-                controller.transform.eulerAngles.z
-            );
-            controller.transform.eulerAngles = rotation;
+            if (controller.transform.eulerAngles.x + Input.GetAxis("Mouse Y") * -1f > 0 &&
+                controller.transform.eulerAngles.x + Input.GetAxis("Mouse Y") * -1f < 90) {
+                Vector3 rotation = new Vector3 (
+                    controller.transform.eulerAngles.x + Input.GetAxis("Mouse Y") * -1f,
+                    controller.transform.eulerAngles.y + Input.GetAxis("Mouse X") * 1f,
+                    controller.transform.eulerAngles.z
+                );
+                controller.transform.eulerAngles = rotation;
+            } else {
+                Vector3 rotation = new Vector3 (
+                    controller.transform.eulerAngles.x,
+                    controller.transform.eulerAngles.y + Input.GetAxis("Mouse X") * 1f,
+                    controller.transform.eulerAngles.z
+                );
+                controller.transform.eulerAngles = rotation;
+            }
         }
             
         //Zoom Out
