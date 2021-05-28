@@ -5,7 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/BuildScene.unity
+    guid: a2b9877d9c0b308419697e2af9d61af4
+  - enabled: 0
+    path: Assets/Scenes/FocusTest2.unity
+    guid: 5e95131ac53802941ac74a47e377c85c
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 91fd1bcd5f674044ea460ed1e7ed998f, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 4ea4329ac818cb145bcb097f72c01726, type: 2}

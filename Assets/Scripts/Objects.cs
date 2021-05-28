@@ -10,9 +10,12 @@ public class Objects : MonoBehaviour
 {
     public List<GameObject> staticObjects;
     public GameObject grid;
-    private bool[,] objGrid;
-    private bool[,] soilGrid;
-    private bool[,] permGrid;
+     private bool[,] objGrid;
+    // private bool[,] soilGrid;
+    // private bool[,] permGrid;
+
+    private Dictionary<Tuple<int, int>, Dictionary<string, bool>> squares;
+
     private int cols;
     private int rows;
 
@@ -35,13 +38,13 @@ public class Objects : MonoBehaviour
         rows = grid.GetComponent<GridContainer>().gridY;
         // initialize empty grid
         objGrid = new bool[cols,rows];
-        soilGrid = new bool[cols,rows];
-        permGrid = new bool[cols, rows];
+        // soilGrid = new bool[cols,rows];
+        // permGrid = new bool[cols, rows];
         for (int col = 0; col < cols; col++) {
             for (int row = 0; row < rows; row++) {
                 objGrid[col,row] = true;
-                soilGrid[col,row] = false;
-                permGrid[col, row] = false;
+                // soilGrid[col,row] = false;
+                // permGrid[col, row] = false;
             }
         }
         // place static objects
@@ -49,31 +52,44 @@ public class Objects : MonoBehaviour
             int col = obj.GetComponent<Position>().column-1;
             int row = obj.GetComponent<Position>().row-1;
             objGrid[col,row] = false;
-            permGrid[col, row] = true;
+            // grid.GetComponent<GridContainer>().setObject(col, row);
+            // permGrid[col, row] = true;
         }
 
+        // squares = new Dictionary<Tuple<int, int>, Dictionary<string, bool>>();
+        // foreach (GameObject obj in staticObjects) {
+        //     int col = obj.GetComponent<Position>().column-1;
+        //     int row = obj.GetComponent<Position>().row-1;
+        //     squares.Add((col, row), new Dictionary<string, bool>());
+        //     squares[(col, row)].Add("isEmpty")
+        // }
+
+
     }
 
-    public bool isEmpty(int col, int row) {
-        return objGrid[col-1,row-1];
-    }
+    // public bool isEmpty(int col, int row) {
+    //     return objGrid[col-1,row-1];
+    // }
 
-    public bool isSoil(int col, int row) {
-        return soilGrid[col-1,row-1];
-    }
+    // public bool isSoil(int col, int row) {
+    //     return soilGrid[col-1,row-1];
+    // }
 
-    public bool isPermanent(int col, int row) {
-        return permGrid[col-1, row-1];
-    }
 
-    // specifically for soil
-    public void setSquare(int col, int row, bool status) {
-        objGrid[col-1, row-1] = status;
-        soilGrid[col-1, row-1] = !status;
-    }
 
-    public void setSoil(int col, int row, bool status) {
-        soilGrid[col-1, row-1] = status;
-    }
+
+    // public bool isPermanent(int col, int row) {
+    //     return permGrid[col-1, row-1];
+    // }
+
+    // // specifically for soil
+    // public void setSquare(int col, int row, bool status) {
+    //     objGrid[col-1, row-1] = status;
+    //     soilGrid[col-1, row-1] = !status;
+    // }
+
+    // public void setSoil(int col, int row, bool status) {
+    //     soilGrid[col-1, row-1] = status;
+    // }
 
 }

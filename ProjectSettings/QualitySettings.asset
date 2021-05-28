@@ -4,7 +4,7 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 5
+  m_CurrentQuality: 4
   m_QualitySettings:
   - serializedVersion: 2
     name: Very Low
@@ -154,7 +154,7 @@ QualitySettings:
     name: Very High
     pixelLightCount: 3
     shadows: 2
-    shadowResolution: 2
+    shadowResolution: 1
     shadowProjection: 1
     shadowCascades: 2
     shadowDistance: 70
@@ -165,7 +165,7 @@ QualitySettings:
     skinWeights: 4
     textureQuality: 0
     anisotropicTextures: 2
-    antiAliasing: 2
+    antiAliasing: 8
     softParticles: 1
     softVegetation: 1
     realtimeReflectionProbes: 1
@@ -190,18 +190,18 @@ QualitySettings:
     name: Ultra
     pixelLightCount: 16
     shadows: 2
-    shadowResolution: 2
+    shadowResolution: 3
     shadowProjection: 1
     shadowCascades: 4
     shadowDistance: 150
-    shadowNearPlaneOffset: 3
+    shadowNearPlaneOffset: 0
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 1
     skinWeights: 4
     textureQuality: 0
     anisotropicTextures: 2
-    antiAliasing: 2
+    antiAliasing: 8
     softParticles: 1
     softVegetation: 1
     realtimeReflectionProbes: 1
@@ -231,7 +231,7 @@ QualitySettings:
     PSP2: 2
     Stadia: 5
     Standalone: 5
-    WebGL: 3
+    WebGL: 5
     Windows Store Apps: 5
     XboxOne: 5
     iPhone: 2
